@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room: MyString
+  topic: MyString
+  class_time: 2018-08-12 23:03:38
+
+two:
+  room: MyString
+  topic: MyString
+  class_time: 2018-08-12 23:03:38
