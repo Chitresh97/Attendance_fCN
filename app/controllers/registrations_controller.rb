@@ -10,4 +10,5 @@ class RegistrationsController < Devise::RegistrationsController
     params.require(:student).permit(:name, :email, :password, :password_confirmation, :current_password)
   end
   
+
 end
