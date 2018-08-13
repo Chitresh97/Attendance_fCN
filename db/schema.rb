@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180812190248) do
+ActiveRecord::Schema.define(version: 20180813003505) do
 
   create_table "batches", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,24 @@ ActiveRecord::Schema.define(version: 20180812190248) do
     t.datetime "class_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "student_batches", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "batch_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["batch_id"], name: "index_student_batches_on_batch_id"
+    t.index ["student_id"], name: "index_student_batches_on_student_id"
+  end
+
+  create_table "student_classes", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "class_date_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["class_date_id"], name: "index_student_classes_on_class_date_id"
+    t.index ["student_id"], name: "index_student_classes_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
