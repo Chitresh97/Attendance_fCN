@@ -15,7 +15,7 @@ form do |f|
   f.inputs "Batch Details" do
     f.input :name, :lable=>"Name"
     f.input :course, :lable=>"Course"
-    f.input :teacher_id, :lable=>"Teacher"
+    f.input :teacher, :lable=>"Teacher"
     f.has_many :student_batch, allow_destroy: true do |n_f|
       n_f.input :student
     end
