@@ -1,11 +1,21 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  def after_sign_in_path_for(student)
-    students_root_path
+  protected
+
+  def devise_parameter_sanitizer
+    if resource_class == Student
+      Student::ParameterSanitizer.new(Student, :student, params)
+    else
+      super # Use the default one
+    end
   end
-  
-  def after_sign_in_path_for(teacher)
-    teachers_root_path
+
+  def devise_parameter_sanitizer
+    if resource_class == Teacher
+      Teacher::ParameterSanitizer.new(Teacher, :teacher, params)
+    else
+      super # Use the default one
+    end
   end
 end

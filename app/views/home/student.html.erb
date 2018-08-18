@@ -1,0 +1,11 @@
+<div class='auth-info-links'>
+  <% if student_signed_in? %>
+    <p><%= current_student.name %></p>
+    <p><%= link_to "Sign Out", destroy_student_session_path, method: :delete %></p>
+  <% else %>
+    <p><%= link_to "Sign In", new_student_session_path %></p>
+    <p><%= link_to "Sign Up", new_student_registration_path %></p>
+  <% end %>
+</div>
+<h1>Home#student</h1>
+<p>Find me in app/views/home/student.html.erb</p>
