@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180818081005) do
+ActiveRecord::Schema.define(version: 20180819061357) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 20180818081005) do
     t.datetime "class_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "batch_id"
+    t.index ["batch_id"], name: "index_class_dates_on_batch_id"
   end
 
   create_table "student_batches", force: :cascade do |t|
