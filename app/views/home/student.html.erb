@@ -7,5 +7,23 @@
     <p><%= link_to "Sign Up", new_student_registration_path %></p>
   <% end %>
 </div>
-<h1>Home#student</h1>
-<p>Find me in app/views/home/student.html.erb</p>
+<div class="container">
+  <div class="jumbotron">
+    <%if @periods.include? @today%>
+    <button class="btn btn-success" id="present">Mark me present</button>
+    <%else%>
+    <button disabled class="btn btn-success" id="present">Mark me present</button>
+    <%end%>
+
+  <button class="btn btn-info" id="present">View my attendance record</button>
+  </div>
+</div>
+
+<script>
+    console.log('Script running');
+    $('#present').click(function () {
+
+      $(this).prop('disabled', true);
+
+    });
+  </script>
